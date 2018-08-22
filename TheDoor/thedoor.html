@@ -36,8 +36,8 @@
 
         return xmlHttp;
     }
-    window.onload = function () {
-        {
+    //window.onload = function () {
+        //document.getElementById("ok").onclick = function () {
             /*
              * 1    创建XMLHttpRequest对象
              */
@@ -81,7 +81,7 @@
              *         * asynch：表示请求是否要异步传输，默认值为true(异步)。
              */
             //xhr.open("POST", "../testServlet?timeStamp=" + new Date().getTime() + "&c=18", true);
-            xhr.open("POST", "InterFace", true);
+            xhr.open("POST", "./InterFace", true);
             //如果是POST请求方式，设置请求首部信息
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
@@ -94,6 +94,6 @@
              *         * 如果浏览器请求的类型为POST类型时，通过send()方法发送请求数据，服务器可以接收
              */
             xhr.send("cmd=getUidPer");        //xhr.send(null);
-        }
-    }
+        //}
+   // }
 </script>
