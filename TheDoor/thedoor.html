@@ -6,10 +6,14 @@
             margin: 0;
             padding: 0;
         }
+        .btn {
+            width:100px;
+            height:30px;
+        }
     </style>
 </head>
 <body>
-
+    <div class="btn" id="ok">btn</div>
 </body>
 </html>
 <script>
@@ -76,8 +80,8 @@
              *         * url：路径字符串，指向你所请求的服务器上的那个文件。请求路径
              *         * asynch：表示请求是否要异步传输，默认值为true(异步)。
              */
-            xhr.open("POST", "../testServlet?timeStamp=" + new Date().getTime() + "&c=18", true);
-
+            //xhr.open("POST", "../testServlet?timeStamp=" + new Date().getTime() + "&c=18", true);
+            xhr.open("POST", "InterFace", true);
             //如果是POST请求方式，设置请求首部信息
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
@@ -89,7 +93,7 @@
              *         * 如果浏览器请求的类型为GET类型时，通过send()方法发送请求数据，服务器接收不到    
              *         * 如果浏览器请求的类型为POST类型时，通过send()方法发送请求数据，服务器可以接收
              */
-            xhr.send("a=6&b=9");        //xhr.send(null);
+            xhr.send("cmd=getUidPer");        //xhr.send(null);
         }
     }
 </script>
