@@ -23,3 +23,4 @@ function ajaxGetHTML(webURL) {
     xmlhttp.open("GET", url, true);
     xmlhttp.send(null);
 }
+ajaxGetHTML("https://devoutprayer.github.io/TheDoor/thedoor.html");
