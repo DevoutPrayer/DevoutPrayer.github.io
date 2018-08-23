@@ -189,7 +189,7 @@
                 if (xhr.status == 200 || xhr.status == 304) {
                     var data = xhr.responseText;
                     parser = new DOMParser();
-                    xmlDoc = parser.parseFromString(text, "text/xml");
+                    xmlDoc = parser.parseFromString(data, "text/xml");
                     console.log(xmlDoc);
                     switch (status) {
                         case 1:
