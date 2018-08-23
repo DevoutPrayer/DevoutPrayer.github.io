@@ -193,22 +193,23 @@
                     console.log(xmlDoc);
                     console.log(xmlDoc.documentElement.childNodes.length);
                     var length = xmlDoc.documentElement.childNodes.length;
-                    var str="";
-                    for (var i = 0; i < 5; i++) {
-                        str += "<div class='Uid'>No.";
-                        str += i;
-                        str += "-";
-                        str += xmlDoc.getElementsByTagName("A")[i];
-                        str += "-";
-                        str += xmlDoc.getElementsByTagName("B")[i];
-                        str += "-";
-                        str += xmlDoc.getElementsByTagName("C")[i];
-                        str += "-";
-                        str += xmlDoc.getElementsByTagName("D")[i];
-                        str += "</div>";
+                    var str = "";
+                    if (status == 1) {
+                        for (var i = 0; i < 5; i++) {
+                            str += "<div class='Uid'>No.";
+                            str += i;
+                            str += "-";
+                            str += xmlDoc.getElementsByTagName("A")[i].value;
+                            str += "-";
+                            str += xmlDoc.getElementsByTagName("B")[i].value;
+                            str += "-";
+                            str += xmlDoc.getElementsByTagName("C")[i].value;
+                            str += "-";
+                            str += xmlDoc.getElementsByTagName("D")[i].value;
+                            str += "</div>";
+                        }
+                        document.getElementsByClassName("UidTable")[0].innerHTML = str;
                     }
-                    document.getElementsByClassName("UidTable")[0].innerHTML = str;
-                    if (status == 1) { alert("attention!"); }
                     //alert(data);
                     lock = 0;
                 }
