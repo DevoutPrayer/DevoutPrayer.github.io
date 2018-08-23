@@ -199,13 +199,13 @@
                             str += "<div class='Uid'>No.";
                             str += i;
                             str += "-";
-                            str += xmlDoc.getElementsByTagName("A")[i].value;
+                            str += xmlDoc.getElementsByTagName("A")[i].childNodes[0].value;
                             str += "-";
-                            str += xmlDoc.getElementsByTagName("B")[i].value;
+                            str += xmlDoc.getElementsByTagName("B")[i].childNodes[0].value;
                             str += "-";
-                            str += xmlDoc.getElementsByTagName("C")[i].value;
+                            str += xmlDoc.getElementsByTagName("C")[i].childNodes[0].value;
                             str += "-";
-                            str += xmlDoc.getElementsByTagName("D")[i].value;
+                            str += xmlDoc.getElementsByTagName("D")[i].childNodes[0].value;
                             str += "</div>";
                         }
                         document.getElementsByClassName("UidTable")[0].innerHTML = str;
