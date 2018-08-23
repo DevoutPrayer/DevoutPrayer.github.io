@@ -130,6 +130,10 @@
                 <input class="readBorder" size="5" maxlength="3" id="8"><span style="color:red">—</span><input class="readBorder" size="5" maxlength="3" id="9"><span style="color:red">—</span><input class="readBorder" size="5" maxlength="3" id="10"><span style="color:red">—</span><input class="readBorder" size="5" maxlength="3" id="11">
                 <button type="button" class="button blue" id="3">增加允许Uid</button>
             </div>
+            <div class="btnrow">
+                <input class="readBorder" size="5" maxlength="3" id="12"><span style="color:red">—</span><input class="readBorder" size="5" maxlength="3" id="13"><span style="color:red">—</span><input class="readBorder" size="5" maxlength="3" id="14"><span style="color:red">—</span><input class="readBorder" size="5" maxlength="3" id="15">
+                <button type="button" class="button blue" id="16">读取当前Uid</button>
+            </div>
         </div>
 
 
@@ -191,10 +195,11 @@
                     parser = new DOMParser();
                     xmlDoc = parser.parseFromString(data, "text/xml");
                     console.log(xmlDoc);
-                    console.log(xmlDoc.documentElement.childNodes.length);
-                    var length = xmlDoc.documentElement.childNodes.length;
+                    
+                    
                     var str = "";
                     if (status == 1) {
+                        var length = xmlDoc.documentElement.childNodes.length;
                         for (var i = 0; i < 5; i++) {
                             str += "<div class='Uid'>No.";
                             str += i;
@@ -228,6 +233,7 @@
                     }
                     if (status == 4) {
                     }
+                    status = -1;
                     lock = 0;
                 }
             }
