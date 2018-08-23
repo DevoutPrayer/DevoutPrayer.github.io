@@ -210,7 +210,24 @@
                         }
                         document.getElementsByClassName("UidTable")[0].innerHTML = str;
                     }
-                    //alert(data);
+                    if (status == 2) {
+                        if (xmlDoc.getElementsByTagName("A")[0].childNodes[0].nodeValue == 1) {
+                            alert("删除允许Uid成功！");
+                        }
+                        else if (xmlDoc.getElementsByTagName("A")[0].childNodes[0].nodeValue == 2) {
+                            alert("删除允许Uid失败！");
+                        }
+                    }
+                    if (status == 3) {
+                        if (xmlDoc.getElementsByTagName("A")[0].childNodes[0].nodeValue == 1) {
+                            alert("增加允许Uid成功！");
+                        }
+                        else if (xmlDoc.getElementsByTagName("A")[0].childNodes[0].nodeValue == 2) {
+                            alert("增加允许Uid失败！");
+                        }
+                    }
+                    if (status == 4) {
+                    }
                     lock = 0;
                 }
             }
@@ -249,27 +266,33 @@
         }
     }
     document.getElementById("2").onclick = function () {
-        status = 2;
-        command = "cmd=deleteUid&A=";
-        command += document.getElementById("4").value;
-        command += "&B=";
-        command += document.getElementById("5").value;
-        command += "&C=";
-        command += document.getElementById("6").value;
-        command += "&D=";
-        command += document.getElementById("7").value;
-        alert(command);
+        if (!lock) {
+            lock = 1;
+            status = 2;
+            command = "cmd=deleteUid&A=";
+            command += document.getElementById("4").value;
+            command += "&B=";
+            command += document.getElementById("5").value;
+            command += "&C=";
+            command += document.getElementById("6").value;
+            command += "&D=";
+            command += document.getElementById("7").value;
+            interFace();
+        }
     }
     document.getElementById("3").onclick = function () {
-        status = 3;
-        command = "cmd=addUid&A=";
-        command += document.getElementById("8").value;
-        command += "&B=";
-        command += document.getElementById("9").value;
-        command += "&C=";
-        command += document.getElementById("10").value;
-        command += "&D=";
-        command += document.getElementById("11").value;
-        alert(command);
+        if (!lock) {
+            lock = 1;
+            status = 3;
+            command = "cmd=addUid&A=";
+            command += document.getElementById("8").value;
+            command += "&B=";
+            command += document.getElementById("9").value;
+            command += "&C=";
+            command += document.getElementById("10").value;
+            command += "&D=";
+            command += document.getElementById("11").value;
+            interFace();
+        }
     }
 </script>
