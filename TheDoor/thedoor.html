@@ -1,18 +1,38 @@
 ﻿<html>
 <head>
-    <title>The Door</title>
+    <title>门禁系统</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
+
         .btn {
-            width:100px;
-            height:30px;
+            width: 100px;
+            height: 30px;
+        }
+        .container {
+            width: 500px;
+            min-height: 600px;
+            border: 1px solid darkgrey;
+            margin: 100px auto;
+        }
+        .ReadUid{
+            display:flex;
+            flex-direction:column;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="login"></div>
+        <div class="ReadUid">
+            <span style="text-align:center;margin-top:1px;">允许使用的Uid</span>
+            <div class="UidTable">
+                <div class="Uid"></div>
+            </div>
+        </div>
+    </div>
     <div class="btn" id="ok" onclick="interFace()">btn</div>
 </body>
 </html>
@@ -33,7 +53,6 @@
                 catch (e) { }
             }
         }
-
         return xmlHttp;
     }
     /*
@@ -42,17 +61,17 @@
     var xhr = ajaxFunction();
     var command;
     command = "cmd=getUidPer";
-    function interFace(){ 
+    function interFace() {
         /*
             * 2    服务器向浏览器响应请求
-            * 
+            *
             * readyState 属性表示Ajax请求的当前状态。它的值用数字代表。
                 0 代表未初始化。 还没有调用 open 方法
                 1 代表正在加载。 open 方法已被调用，但 send 方法还没有被调用
                 2 代表已加载完毕。send 已被调用。请求已经开始
                 3 代表交互中。服务器正在发送响应
                 4 代表完成。响应发送完毕
-                    
+
             常用状态码及其含义：
                 404 没找到页面(not found)
                 403 禁止访问(forbidden)
@@ -73,7 +92,7 @@
 
         /*
             * 3    浏览器与服务器建立连接
-            * 
+            *
             * xhr.open(method, url, asynch);
             *         * 与服务器建立连接使用
             *         * method：请求类型，类似 “GET”或”POST”的字符串。
@@ -88,9 +107,9 @@
 
         /*
             * 4    浏览器向服务器发送请求
-            * 
+            *
             *     send()方法：
-            *         * 如果浏览器请求的类型为GET类型时，通过send()方法发送请求数据，服务器接收不到    
+            *         * 如果浏览器请求的类型为GET类型时，通过send()方法发送请求数据，服务器接收不到
             *         * 如果浏览器请求的类型为POST类型时，通过send()方法发送请求数据，服务器可以接收
             */
         xhr.send(command);        //xhr.send(null);
