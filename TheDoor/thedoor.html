@@ -13,13 +13,99 @@
         }
         .container {
             width: 500px;
-            min-height: 600px;
+            min-height: 500px;
             border: 1px solid darkgrey;
             margin: 100px auto;
+            
         }
         .ReadUid{
             display:flex;
             flex-direction:column;
+        }
+        .Uid {
+            margin:0;
+            text-align:center;
+        }
+        .UidTable{
+            height:285px;
+        }
+        .btnrow{
+           text-align:right;
+        }
+        .button {
+            width: 140px;
+            line-height: 38px;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 1px #333;
+            border-radius: 5px;
+            margin: 0 20px 20px 0;
+            position: relative;
+            right:0;
+            overflow: hidden;
+        }
+        .button.green {
+            border: 1px solid #64c878;
+            box-shadow: 0 1px 2px #b9ecc4 inset,0 -1px 0 #6c9f76 inset,0 -2px 3px #b9ecc4 inset;
+            background: -webkit-linear-gradient(top,#90dfa2,#84d494);
+            background: -moz-linear-gradient(top,#90dfa2,#84d494);
+            background: linear-gradient(top,#90dfa2,#84d494);
+        }
+
+        .button.blue {
+            border: 1px solid #1e7db9;
+            box-shadow: 0 1px 2px #8fcaee inset,0 -1px 0 #497897 inset,0 -2px 3px #8fcaee inset;
+            background: -webkit-linear-gradient(top,#42a4e0,#2e88c0);
+            background: -moz-linear-gradient(top,#42a4e0,#2e88c0);
+            background: linear-gradient(top,#42a4e0,#2e88c0);
+        }
+        .button.red {
+            border: 1px solid #b42323;
+            box-shadow: 0 1px 2px #e99494 inset,0 -1px 0 #954b4b inset,0 -2px 3px #e99494 inset;
+            background: -webkit-linear-gradient(top,#d53939,#b92929);
+            background: -moz-linear-gradient(top,#d53939,#b92929);
+            background: linear-gradient(top,#d53939,#b92929);
+        }
+        .red:hover {
+            background: -webkit-linear-gradient(top,#eb6f6f,#c83c3c);
+            background: -moz-linear-gradient(top,#eb6f6f,#c83c3c);
+            background: linear-gradient(top,#eb6f6f,#c83c3c);
+        }
+        .green:hover {
+            background: -webkit-linear-gradient(top,#aaebb9,#82d392);
+            background: -moz-linear-gradient(top,#aaebb9,#82d392);
+            background: linear-gradient(top,#aaebb9,#82d392);
+        }
+
+        .blue:hover {
+            background: -webkit-linear-gradient(top,#70bfef,#4097ce);
+            background: -moz-linear-gradient(top,#70bfef,#4097ce);
+            background: linear-gradient(top,#70bfef,#4097ce);
+        }
+        .green:active {
+            top: 1px;
+            box-shadow: 0 1px 3px #4d7254 inset,0 3px 0 #fff;
+            background: -webkit-linear-gradient(top,#5eac6e,#72b37e);
+            background: -moz-linear-gradient(top,#5eac6e,#72b37e);
+            background: linear-gradient(top,#5eac6e,#72b37e);
+        }
+        .blue:active {
+            top: 1px;
+            box-shadow: 0 1px 3px #114566 inset,0 3px 0 #fff;
+            background: -webkit-linear-gradient(top,#1a71a8,#1976b1);
+            background: -moz-linear-gradient(top,#1a71a8,#1976b1);
+            background: linear-gradient(top,#1a71a8,#1976b1);
+        }
+        .red:active {
+            top: 1px;
+            box-shadow: 0 1px 3px #5b0505 inset,0 3px 0 #fff;
+            background: -webkit-linear-gradient(top,#b11a1a,#bf2626);
+            background: -moz-linear-gradient(top,#b11a1a,#bf2626);
+            background: linear-gradient(top,#b11a1a,#bf2626);
+        }
+        .readBorder {
+            border: 1px dotted #ff0000;
         }
     </style>
 </head>
@@ -27,11 +113,26 @@
     <div class="container">
         <div class="login"></div>
         <div class="ReadUid">
-            <span style="text-align:center;margin-top:1px;">允许使用的Uid</span>
+            <span style="text-align:center;margin-top:1px;font-size:1.2em;">允许使用的Uid</span>
             <div class="UidTable">
-                <div class="Uid"></div>
+                <div class="Uid">No.1--125--25--23--24</div>
+                <div class="Uid">No.1--125--25--23--24</div>
+                <div class="Uid">No.1--125--25--23--24</div>
+                <div class="Uid">No.1--125--25--23--24</div>
+            </div>
+
+            <div class="btnrow"><button type="button" class="button green" id="1">查询允许Uid</button></div>
+            <div class="btnrow">
+                <input class="readBorder" size="5" maxlength="3" id="4"><span style="color:red">—</span><input class="readBorder" size="5" maxlength="3" id="5"><span style="color:red">—</span><input class="readBorder" size="5" maxlength="3" id="6"><span style="color:red">—</span><input class="readBorder" size="5" maxlength="3" id="7">
+                <button type="button" class="button red" id="2">删除允许Uid</button>
+            </div>
+            <div class="btnrow">
+                <input class="readBorder" size="5" maxlength="3" id="8"><span style="color:red">—</span><input class="readBorder" size="5" maxlength="3" id="9"><span style="color:red">—</span><input class="readBorder" size="5" maxlength="3" id="10"><span style="color:red">—</span><input class="readBorder" size="5" maxlength="3" id="11">
+                <button type="button" class="button blue" id="3">增加允许Uid</button>
             </div>
         </div>
+
+
     </div>
     <div class="btn" id="ok" onclick="interFace()">btn</div>
 </body>
@@ -60,6 +161,8 @@
     */
     var xhr = ajaxFunction();
     var command;
+    var lock = 0;
+    var status = -1;
     command = "cmd=getUidPer";
     function interFace() {
         /*
@@ -85,7 +188,19 @@
             if (xhr.readyState == 4) {
                 if (xhr.status == 200 || xhr.status == 304) {
                     var data = xhr.responseText;
+                    switch (status) {
+                        case 1:
+                            alert(1);
+                            break;
+                        case 2:
+                            alert(2);
+                            break;
+                        case 3:
+                            alert(3);
+                            break;
+                    }
                     alert(data);
+                    lock = 0;
                 }
             }
         }
@@ -113,5 +228,37 @@
             *         * 如果浏览器请求的类型为POST类型时，通过send()方法发送请求数据，服务器可以接收
             */
         xhr.send(command);        //xhr.send(null);
+    }
+    document.getElementById("1").onclick = function () {
+        if (!lock) {
+            lock = 1;
+            status = 1;
+            command = "cmd=getUidPer";
+            interFace();
+        }
+    }
+    document.getElementById("2").onclick = function () {
+        status = 2;
+        command = "cmd=deleteUid&A=";
+        command += document.getElementById("4").value;
+        command += "&B=";
+        command += document.getElementById("5").value;
+        command += "&C=";
+        command += document.getElementById("6").value;
+        command += "&D=";
+        command += document.getElementById("7").value;
+        alert(command);
+    }
+    document.getElementById("3").onclick = function () {
+        status = 3;
+        command = "cmd=addUid&A=";
+        command += document.getElementById("8").value;
+        command += "&B=";
+        command += document.getElementById("9").value;
+        command += "&C=";
+        command += document.getElementById("10").value;
+        command += "&D=";
+        command += document.getElementById("11").value;
+        alert(command);
     }
 </script>
