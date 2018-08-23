@@ -200,7 +200,7 @@
                     var str = "";
                     if (status == 1) {
                         var length = xmlDoc.documentElement.childNodes.length;
-                        for (var i = 0; i < 5; i++) {
+                        for (var i = 0; i < length; i++) {
                             str += "<div class='Uid'>No.";
                             str += i;
                             str += "-";
@@ -232,6 +232,16 @@
                         }
                     }
                     if (status == 4) {
+                        if (xmlDoc.getElementsByTagName("A")[0].childNodes[0].nodeValue == -1) {
+                            alert("未读取到卡片！");
+                        }
+                        else {
+                            document.getElementById("12").innerHTML = xmlDoc.getElementsByTagName("A")[0].childNodes[0].nodeValue;
+                            document.getElementById("13").innerHTML = xmlDoc.getElementsByTagName("B")[0].childNodes[0].nodeValue;
+                            document.getElementById("14").innerHTML = xmlDoc.getElementsByTagName("C")[0].childNodes[0].nodeValue;
+                            document.getElementById("15").innerHTML = xmlDoc.getElementsByTagName("D")[0].childNodes[0].nodeValue;
+                        }
+                        
                     }
                     status = -1;
                     lock = 0;
@@ -298,6 +308,14 @@
             command += document.getElementById("10").value;
             command += "&D=";
             command += document.getElementById("11").value;
+            interFace();
+        }
+    }
+    document.getElementById("16").onclick = function () {
+        if (!lock) {
+            lock = 1;
+            status = 4;
+            command = "cmd=readCard";
             interFace();
         }
     }
