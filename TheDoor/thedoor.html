@@ -191,6 +191,7 @@
                     parser = new DOMParser();
                     xmlDoc = parser.parseFromString(data, "text/xml");
                     console.log(xmlDoc);
+                    console.log(xmlDoc.documentElement.childNodes.length);
                     if (status == 1) { alert("attention!"); }
                     alert(data);
                     lock = 0;
