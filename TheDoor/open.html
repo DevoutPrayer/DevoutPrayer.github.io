@@ -179,10 +179,10 @@
             //alert(xhr.status);
             if (xhr.readyState == 4) {
                 if (xhr.status == 200 || xhr.status == 304) {
-                    //var data = xhr.responseText;
-                    //parser = new DOMParser();
-                    //xmlDoc = parser.parseFromString(data, "text/xml");
-                    //console.log(xmlDoc);
+                    var data = xhr.responseText;
+                    parser = new DOMParser();
+                    xmlDoc = parser.parseFromString(data, "text/xml");
+                    console.log(xmlDoc);
                     if (xmlDoc.getElementsByTagName("A")[0].childNodes[0].nodeValue == 1) {
                         alert("£¡");
                     }
