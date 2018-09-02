@@ -125,6 +125,7 @@
 </head>
 <body>
     <div style="width:500px;text-align:center;margin:300px auto;">
+        <form><input type="password" placeholder="password" id="2" /></form>
         <button type="button" class="button green" style="margin:auto auto;" id="1">Open!!</button>
     </div>
 </body>
@@ -182,6 +183,12 @@
                     //parser = new DOMParser();
                     //xmlDoc = parser.parseFromString(data, "text/xml");
                     //console.log(xmlDoc);
+                    if (xmlDoc.getElementsByTagName("A")[0].childNodes[0].nodeValue == 1) {
+                        alert("£¡");
+                    }
+                    else if (xmlDoc.getElementsByTagName("A")[0].childNodes[0].nodeValue == 2) {
+                        alert("¿ÚÁî´íÎó£¡");
+                    }
                     lock = 0;
                 }
             }
@@ -213,6 +220,9 @@
     }
     document.getElementById("1").onclick = function () {
         if (!lock) {
+            command = "cmd=openDoor&key=";
+            command += document.getElementById("2").value;
+            console.log(command);
             lock = 1;
             interFace();
         } 
