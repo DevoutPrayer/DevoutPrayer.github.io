@@ -184,10 +184,10 @@
                     xmlDoc = parser.parseFromString(data, "text/xml");
                     console.log(xmlDoc);
                     if (xmlDoc.getElementsByTagName("A")[0].childNodes[0].nodeValue == 1) {
-                        alert("£¡");
+                        
                     }
                     else if (xmlDoc.getElementsByTagName("A")[0].childNodes[0].nodeValue == 2) {
-                        alert("¿ÚÁî´íÎó£¡");
+                        alert("Key Wrong!");
                     }
                     lock = 0;
                 }
