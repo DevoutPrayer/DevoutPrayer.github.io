@@ -271,6 +271,14 @@
     function changePwd4Visible() {
         pwd4.type = event.target.checked ? "text" : "password";
     }
+    function addPwd() {
+        var key = get_cookie("key");
+        console.log(document.cookie);
+        console.log(key);
+        pwd4.value = key;
+        cookielock = 0;
+    }
+    addPwd();
     pwd4.onchange = function () {
         if (!cookielock) {
             var str = "key=";
@@ -296,11 +304,5 @@
         }
         return returnvalue;
     }
-    window.onload = function () {
-        var key = get_cookie("key");
-        console.log(document.cookie);
-        console.log(key);
-        pwd4.value = key;
-        cookielock = 0;
-    }
+    
 </script>
