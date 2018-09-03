@@ -267,7 +267,40 @@
     }
     var pwd4 = document.getElementById("pwd4");
     var cb4 = document.getElementById("cb4");
+    var cookielock = true;
     function changePwd4Visible() {
         pwd4.type = event.target.checked ? "text" : "password";
+    }
+    pwd4.onchange = function () {
+        if (!cookielock) {
+            var str = "key=";
+            str += pwd4.value;
+            document.cookie = str;
+            console.log(str);
+            console.log(document.cookie);
+        }
+    }
+    function get_cookie(Name) {
+        var search = Name + "="//查询检索的值
+        var returnvalue = "";//返回值
+        if (document.cookie.length > 0) {
+            sd = document.cookie.indexOf(search);
+            if (sd != -1) {
+                sd += search.length;
+                end = document.cookie.indexOf(";", sd);
+                if (end == -1)
+                    end = document.cookie.length;
+                //unescape() 函数可对通过 escape() 编码的字符串进行解码。
+                returnvalue = unescape(document.cookie.substring(sd, end))
+            }
+        }
+        return returnvalue;
+    }
+    window.onload = function () {
+        var key = get_cookie("key");
+        console.log(document.cookie);
+        console.log(key);
+        pwd4.value = key;
+        cookielock = 0;
     }
 </script>
