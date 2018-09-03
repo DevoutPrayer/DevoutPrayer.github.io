@@ -273,8 +273,8 @@
     }
     function addPwd() {
         var key = get_cookie("key");
-        console.log(document.cookie);
-        console.log(key);
+        //console.log(document.cookie);
+        //console.log(key);
         pwd4.value = key;
         cookielock = 0;
     }
@@ -284,8 +284,8 @@
             var str = "key=";
             str += pwd4.value;
             document.cookie = str;
-            console.log(str);
-            console.log(document.cookie);
+            //console.log(str);
+            //console.log(document.cookie);
         }
     }
     function get_cookie(Name) {
